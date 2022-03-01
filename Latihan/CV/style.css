@@ -1,0 +1,125 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0;
+}
+
+.body {
+    background-color: white;
+    height: 600px;
+    width: 225px;
+    margin-top: 50px;
+    margin-left: 35%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+
+.box {
+    /* align-items: flex-end; */
+    background-color: rgb(241, 198, 8);
+    height: 250px;
+    width: 180px;
+    display: inline-block;
+}
+
+.box-1 {
+    background-color: rgb(16, 84, 105);
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    margin-left: 75px;
+    margin-top: 125px;
+}
+
+div span {
+    padding-top: 40px;
+    padding-left: 75px;
+    font-size: 40px;
+    position: absolute;
+    line-height: 35px;
+}
+
+.moto {
+    margin-top: 35px;
+    font-size: x-small;
+    position: absolute;
+}
+
+
+.work-exp {
+    margin-top: 75px;
+    margin-left: 25px;
+}
+
+.work-exp p {
+    font-size: medium;
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 50px;
+}
+
+li {
+    font-size: small;
+}
+
+.skills {
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+.skills p {
+    font-size: medium;
+    font-weight: bold;
+}
+
+
+
+
+.body-1 {
+    background-color: white;
+    height: 600px;
+    width: 225px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.personality {
+    margin-top: 150px;
+    margin-left: 20px;
+    padding-left: 2px;
+    padding-right: 20px;
+}
+
+.person {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.personality p {
+    font-size: small;
+    text-align: justify;
+}
+
+.education {
+    margin-top: 80px;
+    margin-left: 20px;
+    padding-left: 2px;
+    padding-right: 20px;
+}
+
+
+.title {
+    font-size: medium;
+    font-weight: bold
+}
+
+.subtitle {
+    margin-top: 5px;
+    font-size: small;
+    font-weight: bold;
+}
+.education p {
+    font-size: small;
+}
