@@ -1,0 +1,72 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+nav {
+        background-color: teal;
+        height: 40px;
+        display: flex;
+        color: white;
+        font-weight: 800;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        z-index: 9px;
+}
+
+nav a {
+    color: inherit;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: inherit;
+    background-color: rgb(32, 108, 179);
+    border-radius: 2px;
+}
+
+.body {
+    text-transform: uppercase;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.education {
+    background-color: mediumseagreen;
+}
+
+.my-education {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#experience {
+    background-color: lightgrey;
+}
+
+.my-experience {
+    text-transform: uppercase;
+}
+
+.my-skills {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#myself {
+    background-color: lightgrey;
+}
+
+.about-me {
+    text-transform: uppercase;
+}
