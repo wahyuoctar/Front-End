@@ -46,12 +46,30 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
         setDisplayInputComment(false)
         })
     }
+
+    // const clickToLike = (mount) => {
+    //     const addLike = {likes: likes + 1}
+    //         axios.patch(`${API_URL}/posts`, addLike)
+
+    //         const dataToFind = toDoItem.find((val) =>{
+    //             return val.id === id
+    //           })
+          
+    //           // axios.get(`http://localhost:2000/todos/${id}`).then((res) =>{
+    //           //   const newIsDoneValue = !res.data.isDone
+                
+    //             axios.patch(`http://localhost:2000/todos/${id}`, { isDone: !dataToFind.isDone}).then(() =>{
+    //               fetchTodoList()
+    //             })
+    // }
     
     
     // ---------------------------------------------------------------------------
     return (
         <>
         <Box borderWidth="1px" borderRadius="lg" maxW="md" paddingY="2" marginY="4">
+        
+        {/* Box for Head */}
         <Box paddingX="2" display="flex" alignItems="center">
             <Avatar src={avaPic}/>
             <Box marginLeft="2">
@@ -59,10 +77,21 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
             <Text color="gray">{location}</Text>
             </Box>
         </Box>
+
+        {/* Box for Image */}
         <Box marginTop="2">
             <Image src={imageUrl} />
         </Box>
+
+        {/* Box for Likes and Icons */}
         <Box display="flex" marginX="2" marginY="2">
+            
+            {/* Likes */}
+            <Text paddingX="1" fontWeight="bold">{likes.toLocaleString()} likes</Text>
+            
+            <Spacer/>
+
+            {/* Icon Like */}
             <Icon boxSize="6" marginRight="4" as={FaRegHeart}
             sx={{_hover: {
                 cursor: "pointer",
@@ -70,7 +99,9 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
             }}}>
 
             </Icon>
-            <Icon boxSize="6" as={FaRegComment}
+
+            {/* Icon Comment */}
+            <Icon boxSize="6" marginRight="4" as={FaRegComment}
             onClick = {() => setDisplayInputComment(true)}
             sx={{_hover: {
                 cursor: "pointer",
@@ -78,20 +109,17 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
             }}}>
     
             </Icon>
-            <Spacer/>
+
+            {/* Icon Option */}
             <Icon boxSize="6" as={BsThreeDotsVertical}
             sx={{_hover: {
                 cursor: "pointer",
                 color: "blue"
             }}}></Icon>
+
         </Box> 
 
-        {/* Likes, Caption, Comment Box */}
-        <Box paddingX="3">
-            <Text fontWeight="bold">{likes.toLocaleString()} likes</Text>
-        </Box>
-        <Box>
-
+        {/* Caption Box */}
         <Box marginY = "2" paddingX = "3">
             <Text display="inline" fontWeight="bold" marginRight="2">
                 {username}</Text>
@@ -99,10 +127,10 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
                 {caption}</Text>
         </Box>
 
-        </Box>
+        {/* Comment Box */}
         <Box marginY = "3" paddingX = "3">
 
-            <Text fontWeight="bold" textDecoration={"underline"}>Comments</Text>
+            <Text fontWeight="bold">Comments</Text>
             <Text onClick={fetchComments}
             sx={{_hover: {
                 cursor: "pointer",
