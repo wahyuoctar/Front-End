@@ -11,10 +11,12 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
     const [comments, setComments] = useState([])
     const [inputComment, setInputComment] = useState("")
     const [displayInputComment, setDisplayInputComment] = useState(false)
+    const [commentsExpand, setCommentsExpand] = useState(false)
     
     const fetchComments = () => {
         axios.get(`${API_URL}/comments`, {
             params: {
+                _expand: "user",
                 postId: id
             }
         }).then((res) => {
@@ -24,7 +26,7 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
 
     const renderComment = () => {
         return comments.map((val) =>{
-            return <Comments content={val.content} username={val.username} />
+            return <Comments content={val.content} username={val.user.username} userId={val.user.userId} />
         })
     }
     
@@ -36,7 +38,7 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
     
     const postNewComment = () => {
         const newData = {
-            username: "Joko Widodo",
+            userId: 1,
             content: inputComment,
             postId: id,
         }
@@ -46,6 +48,7 @@ const Flex = ({ avaPic, username, location, caption, likes, imageUrl, id}) => {
         setDisplayInputComment(false)
         })
     }
+    
 
     // const clickToLike = (mount) => {
     //     const addLike = {likes: likes + 1}

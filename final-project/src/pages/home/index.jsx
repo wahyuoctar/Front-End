@@ -16,7 +16,11 @@ const HomePage = () => {
     const fetchContentList = () => {
         setIsLoading(true)
         setTimeout(() => {
-        axios.get(`${API_URL}/posts`).then((res) =>{
+        axios.get(`${API_URL}/posts`, {
+            params: {
+                _expand: "user"
+            }
+        }).then((res) =>{
             setContentList(res.data)
         }).catch((err) =>{
             toast({
@@ -38,8 +42,8 @@ const HomePage = () => {
         return contentList.map((val) =>{
     return (
         <MainContent
-        username = {val.username}
-        avaPic = {val.avaPic}
+        username = {val.user.username}
+        avaPic = {val.user.avaPic}
         caption = {val.caption}
         likes = {val.likes}
         location = {val.location}
